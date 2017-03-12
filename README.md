@@ -1,6 +1,6 @@
 [![Build Status](https://api.travis-ci.org/vorakl/docker-images.png)](https://travis-ci.org/vorakl/docker-images)
 
-# docker-images
+# Docker images
 
 A collection of docker images.
 For all images are being done:
