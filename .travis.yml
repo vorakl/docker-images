@@ -1,0 +1,14 @@
+language: bash
+
+services:
+    - docker
+
+before_script:
+    - docker info
+    - docker version
+    - docker build --no-cache -t vorakl/alpine alpine
+    - docker build --no-cache -t vorakl/centos centos
+
+script:
+    - docker run --rm -it vorakl/alpine /etc/trc --version
+    - docker run --rm -it vorakl/centos /etc/trc --version
