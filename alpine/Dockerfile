@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache bash procps gnupg1
+RUN apk add --no-cache bash procps curl gnupg1
 
 # TrivialRC (RC system, initialization/startup control, process manager)
 RUN wget -qP /etc/ http://vorakl.github.io/TrivialRC/trc && \
