@@ -4,8 +4,6 @@ services:
     - docker
 
 before_script:
-    - docker info
-    - docker version
     - docker build --no-cache -t vorakl/alpine alpine
     - docker build --no-cache -t vorakl/centos centos
 
