@@ -73,20 +73,6 @@ Then, build and run it:
 ```bash
 $ docker build -t base-alpine-test .
 
-Sending build context to Docker daemon 4.096 kB
-Step 1 : FROM vorakl/alpine:latest
- ---> 8499cad2a441
-Step 2 : ENV RC_VERBOSE true
- ---> Running in a52404ece8a1
- ---> 5cd1a97ee0c2
-Removing intermediate container a52404ece8a1
-Step 3 : CMD uname -a
- ---> Running in b4da2e14c17a
- ---> c0099b02b386
-Removing intermediate container b4da2e14c17a
-Successfully built c0099b02b386
-
-
 $ docker run --rm base-alpine-test
 
 2017-03-12 22:34:12 trc [main/1]: The wait policy: wait_any
@@ -111,19 +97,6 @@ Then, build and run it:
 
 ```bash
 $ docker build -t base-alpine-test .
-
-Sending build context to Docker daemon 4.096 kB
-Step 1 : FROM vorakl/alpine:latest
- ---> 8499cad2a441
-Step 2 : ENV RC_WAIT_POLICY wait_all
- ---> Running in 56018b7d5830
- ---> 885e46fc98dd
-Removing intermediate container 56018b7d5830
-Step 3 : CMD -D sleep 2; echo World -D echo Hello
- ---> Running in 36eee8a3ce87
- ---> 02712cc702a2
-Removing intermediate container 36eee8a3ce87
-Successfully built 02712cc702a2
 
 $ docker run --rm base-alpine-test
 
