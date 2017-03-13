@@ -4,8 +4,8 @@
 
 A collection of docker images. All images automaticaly are being:
 
-* [tested](https://travis-ci.org/vorakl/docker-images) on ~each commit~ to this source repo
-* [built and pushed](https://hub.docker.com/u/vorakl/) to the Docker Hub ~once a day~ or on ~each commit~ to this source repo
+* [tested](https://travis-ci.org/vorakl/docker-images) on *each commit* to this source repo
+* [built and pushed](https://hub.docker.com/u/vorakl/) to the Docker Hub *once a day* or on *each commit* to this source repo
 
 ## Available images
 
