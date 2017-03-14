@@ -1,5 +1,7 @@
 FROM centos:latest
 
+MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name> 
+
 # TrivialRC (RC system, initialization/startup control, process manager)
 RUN curl -sSLfo /etc/trc http://vorakl.github.io/TrivialRC/trc && \
     ( cd /etc && curl -sSLf http://vorakl.github.io/TrivialRC/trc.sha256 | sha256sum -c ) && \
