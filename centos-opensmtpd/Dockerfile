@@ -6,4 +6,4 @@ RUN yum install -y epel-release
 RUN yum install -y opensmtpd && \
     yum clean all
 
-CMD ["/usr/sbin/smtpd", "-d"]
+CMD ["-D", "/usr/sbin/smtpd -d"]
