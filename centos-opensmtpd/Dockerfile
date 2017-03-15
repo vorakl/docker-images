@@ -8,4 +8,6 @@ RUN yum install -y epel-release
 RUN yum install -y opensmtpd && \
     yum clean all
 
-CMD ["-D", "/usr/sbin/smtpd -d"]
+COPY trc.d/ /etc/trc.d/
+
+EXPOSE 25 465
