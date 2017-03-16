@@ -2,10 +2,12 @@
 
 # Docker images
 
-A collection of docker images. All images automaticaly are being:
+A collection of docker images.
 
-* [tested](https://travis-ci.org/vorakl/docker-images) on *each commit* to this source repo
-* [built and pushed](https://hub.docker.com/u/vorakl/) to the Docker Hub *once a day* or on *each commit* to this source repo
+For all images, *once a day* and on *each commit* to this source repo, are being run:
+
+* automated [tests](https://travis-ci.org/vorakl/docker-images)
+* automated [builds](https://hub.docker.com/u/vorakl/)
 
 ## Available images
 
