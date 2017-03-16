@@ -4,9 +4,7 @@ services:
     - docker
 
 before_script:
-    - docker build --no-cache -t vorakl/alpine alpine
-    - docker build --no-cache -t vorakl/centos centos
+    - make build
 
 script:
-    - docker run --rm -e RC_WAIT_POLICY=wait_all vorakl/alpine -B 'source faketpl' -F 'source /etc/os-release && faketpl <<< "-=[\${PRETTY_NAME}]=-"' -F 'gpg --version | grep ^gpg' -F 'curl --version | grep ^curl' -F 'faketpl <<< "-=[\$(uname -r)]=-"'
-    - docker run --rm -e RC_WAIT_POLICY=wait_all vorakl/centos -B 'source faketpl' -F 'faketpl <<< "-=[\$(cat /etc/centos-release)]=-"' -F 'gpg --version | grep ^gpg' -F 'curl --version | grep ^curl' -F 'faketpl <<< "-=[\$(uname -r)]=-"'
+    - make test
