@@ -4,10 +4,10 @@
 
 A collection of docker images.
 
-For all images, *once a day* and on *each commit* to this source repo, are being run:
+For all images, *once a day* and on *each commit* to this source repo, automatically are being run:
 
-* automated [tests](https://travis-ci.org/vorakl/docker-images)
-* automated [builds](https://hub.docker.com/u/vorakl/)
+* [tests](https://travis-ci.org/vorakl/docker-images)
+* [builds](https://hub.docker.com/u/vorakl/)
 
 ## Available images
 
