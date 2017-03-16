@@ -14,5 +14,6 @@ For example `docker pull vorakl/centos:latest` or `docker pull vorakl/alpine`
 
 * Base images
     * [vorakl/centos](https://github.com/vorakl/docker-images/tree/master/centos)
+        * [vorakl/centos-opensmtpd](https://github.com/vorakl/docker-images/tree/master/centos-opensmtpd)
     * [vorakl/alpine](https://github.com/vorakl/docker-images/tree/master/alpine)
 

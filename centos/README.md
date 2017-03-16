@@ -8,6 +8,7 @@
 
 This image has everything is needed for...
 
+* installing extra packages ([EPEL](https://fedoraproject.org/wiki/EPEL))
 * controling a life-cycle of processes inside a container and its behaviour ([TrivialRC](https://github.com/vorakl/TrivialRC))
 * getting configuration from the environment and create a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
 * decrypting a downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/))
