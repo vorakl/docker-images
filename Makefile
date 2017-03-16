@@ -51,5 +51,5 @@ test-centos:
 
 test-centos-opensmtpd:
 	@${ECHO_BIN} ">>> Testing vorakl/centos-opensmtpd ..."
-	@${DOCKER_BIN} run --rm vorakl/centos-opensmtpd -H 'if [[ $${_exit_status} -eq 138 ]]; then exit 0; else exit $${_exit_status}; fi' -D 'sleep 3; smtpctl show status && kill -10 $${MAINPID}'
+	@${DOCKER_BIN} run --rm -e RC_VERBOSE=false vorakl/centos-opensmtpd -H 'if [[ $${_exit_status} -eq 138 ]]; then exit 0; else exit $${_exit_status}; fi' -D 'sleep 3; smtpctl show status && kill -10 $${MAINPID}'
 
