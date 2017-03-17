@@ -63,3 +63,27 @@ Let's assume that configuration on the host exists at `/srv/opensmtpd/` . Then w
 $ docker run -d --name smtpd --net host -v /srv/opensmtpd:/etc/opensmtpd -v /var/spool/smtpd:/var/spool/smtpd -v /var/spool/mail:/var/spool/mail vorakl/centos-opensmtpd
 ```
 
+### Download configuration at run-time from a remote resource
+
+[This repository](https://github.com/vorakl/docker-images) has a branch with an example of 'external' configuration. It's called `centos-opensmtpd-conf`.
+GitHub allows to download a content of the branch as a ZIP archive. The only requirement for using external configuration is to keep all needed files and sub-directories in the `opensmtpd` directory.
+
+Let's run the previous example but instead of bind mounted `opensmtpd` from the Host we will provide `opensmtpd` in the external archive:
+
+```bash
+$ docker run -d --name smtpd --net host -e OPENSMTPD_CONF_URL="https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip" -v /var/spool/smtpd:/var/spool/smtpd -v /var/spool/mail:/var/spool/mail vorakl/centos-opensmtpd
+
+2017-03-17 23:51:28 trc [main/1]: The wait policy: wait_any
+2017-03-17 23:51:28 trc [main/1]: Launching on the boot: /etc/trc.d/boot.get-conf
+2017-03-17 23:51:28 trc [main/1]: The configuration (not encrypted) will be taken from https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip
+Archive:  /tmp/opensmtpd-conf.zip
+5d0762c7be974f1c62d9681e72434196e970507e
+   creating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/
+  inflating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/README.md
+   creating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/opensmtpd/
+  inflating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/opensmtpd/smtpd.conf
+'/tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/opensmtpd/smtpd.conf' -> '/etc/opensmtpd/smtpd.conf'
+2017-03-17 23:51:29 trc [async/31]: Launching on the background: /etc/trc.d/async.opensmtpd
+info: OpenSMTPD 6.0.2p1 starting
+....
+```
