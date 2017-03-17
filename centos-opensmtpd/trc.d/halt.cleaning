@@ -1,0 +1,11 @@
+set +e
+
+if [[ -n "${OPENSMTPD_TMPDIR}" ]] && [[ -d "${OPENSMTPD_TMPDIR}" ]]; then
+    rm -rf ${OPENSMTPD_TMPDIR}
+fi
+
+if [[ -f /tmp/opensmtpd-conf.zip ]]; then
+    rm -f /tmp/opensmtpd-conf.zip
+fi
+
+exit ${_exit_status}

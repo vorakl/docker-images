@@ -1,6 +1,6 @@
 if [[ -n "${OPENSMTPD_CONF_URL}" ]]; then
     log "The configuration (not encrypted) will be taken from ${OPENSMTPD_CONF_URL}"
-    OPENSMTPD_TMPDIR=$(mktemp -d /tmp/opensmtpd.XXXXX)
+    export OPENSMTPD_TMPDIR=$(mktemp -d /tmp/opensmtpd.XXXXX)
     curl -sSLfo /tmp/opensmtpd-conf.zip https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip
     unzip -d ${OPENSMTPD_TMPDIR} /tmp/opensmtpd-conf.zip
     rm -f /tmp/opensmtpd-conf.zip
