@@ -6,8 +6,8 @@ A collection of docker images.
 
 For all images, *once a day* and on *each commit* to this source repo, automatically are being run:
 
-* [tests](https://travis-ci.org/vorakl/docker-images)
-* [builds](https://hub.docker.com/u/vorakl/)
+* [tests](https://travis-ci.org/vorakl/docker-images) (Travis CI)
+* [builds](https://hub.docker.com/u/vorakl/) (Docker Hub)
 
 ## Available images
 
