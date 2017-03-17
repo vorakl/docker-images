@@ -54,3 +54,12 @@ To remove the container run
 $ docker stop smtpd
 $ docker rm smtpd
 ```
+
+### Mount configuration from a host
+
+Let's assume that configuration on the host exists at `/srv/opensmtpd/` . Then we can add one more option to the last command
+
+```bash
+$ docker run -d --name smtpd --net host -v /srv/opensmtpd:/etc/opensmtpd -v /var/spool/smtpd:/var/spool/smtpd -v /var/spool/mail:/var/spool/mail vorakl/centos-opensmtpd
+```
+
