@@ -18,7 +18,7 @@ and there are a few options:
 * Download an Zip archive from some http(s) location by setting up OPENSMTPD_CONF_URL environment configuration
 * Download a PGP encrypted ZIP archive from some http(s) location by setting up OPENSMTPD_ENCRYPTEDCONF_URL environment configuration. In this case you need to bind mount a private key from the host to `/usr/lib/opensmtpd/private.key`
 
-In all cases, you need to provide a directory.
+In all cases, you need to provide a `opensmtpd` (sub-)directory from which will be taken all contents.
 
 ## Examples
 
