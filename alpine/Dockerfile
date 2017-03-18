@@ -2,7 +2,8 @@ FROM alpine:latest
 
 MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name>
 
-RUN apk add --no-cache bash procps curl gnupg1
+RUN apk upgrade --no-cache && \
+    apk add --no-cache bash procps curl gnupg1
 
 # TrivialRC (RC system, initialization/startup control, process manager)
 RUN wget -qP /etc/ http://vorakl.github.io/TrivialRC/trc && \
