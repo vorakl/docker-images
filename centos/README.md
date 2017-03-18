@@ -13,7 +13,7 @@
 
 ## Content
 
-The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. That means it's always up to date, including packages which were updated since the release date of the official base image. All key components are automatically tested with the same periodicity. The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images.
+The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. That means it's always *up to date*, including packages which were updated since the release date of the official base image. All key components are automatically tested with the same periodicity. The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images.
 
 In addition, it has everything is needed for...
 
