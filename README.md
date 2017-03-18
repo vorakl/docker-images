@@ -11,7 +11,7 @@ For all images, *once a day* and on *each commit* to this source repo, automatic
 
 ## Available images
 
-You can download any of these images by specified a name[:tag].
+You can download any of these images by specifying a name[:tag].
 For example `docker pull vorakl/centos:latest` or `docker pull vorakl/alpine`
 
 * Base images
