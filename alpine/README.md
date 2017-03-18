@@ -60,7 +60,7 @@ Yoda
 
 ```
 
-### Dockerfile
+### Dockerfiles
 
 * A basic usage in Dockerfile
 
@@ -113,7 +113,7 @@ World
 
 ```
 
-### The usage of TrivialRC and FakeTpl in containers
+### TrivialRC and FakeTpl in containers
 
 More useful examples you can find here:
 
