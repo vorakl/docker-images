@@ -22,7 +22,7 @@ In all cases, you need to provide an `opensmtpd` (sub-)directory from which will
 
 ## Examples
 
-### A mail realy on the localhost for a host
+### A mail relay on the localhost for a host
 
 This is the simplest use case, doesn't require any configuration files
 
@@ -65,7 +65,7 @@ $ docker run -d --name smtpd --net host -v /srv/opensmtpd:/etc/opensmtpd -v /var
 
 ### Download configuration at run-time from a remote resource
 
-[This repository](https://github.com/vorakl/docker-images) has a branch with an example of 'external' configuration. It's called `centos-opensmtpd-conf`.
+[This repository](https://github.com/vorakl/docker-images) has a branch with an example of 'external' configuration. It's called [centos-opensmtpd-conf](https://github.com/vorakl/docker-images/tree/centos-opensmtpd-conf).
 GitHub allows to download a content of the branch as a ZIP archive. The only requirement for using external configuration is to keep all needed files and sub-directories in the `opensmtpd` directory.
 
 Let's run the previous example but instead of bind mounted `opensmtpd` from the Host we will provide `opensmtpd` in the external archive:
@@ -86,4 +86,14 @@ Archive:  /tmp/opensmtpd-conf.zip
 2017-03-17 23:51:29 trc [async/31]: Launching on the background: /etc/trc.d/async.opensmtpd
 info: OpenSMTPD 6.0.2p1 starting
 ....
+
+$ docker exec -it smtpd cat /etc/opensmtpd/smtpd.conf
+listen on localhost
+listen on ::0
+
+accept for any relay
+
+$ docker stop smtpd
+$ docker rm smtpd
+
 ```
