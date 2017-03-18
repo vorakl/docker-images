@@ -22,7 +22,7 @@ In all cases, you need to provide an `opensmtpd` (sub-)directory from which will
 
 ## Examples
 
-### A mail relay on the localhost for a host
+### A mail relay for a Host on the localhost interface
 
 This is the simplest use case, doesn't require any configuration files
 
@@ -57,7 +57,7 @@ $ docker rm smtpd
 
 ### Mount configuration from a host
 
-Let's assume that configuration on the host exists at `/srv/opensmtpd/` . Then we can add one more option to the last command
+Let's assume that configuration on the host exists at `/srv/opensmtpd/` . Then we can add one more option to the previous example:
 
 ```bash
 $ docker run -d --name smtpd --net host -v /srv/opensmtpd:/etc/opensmtpd -v /var/spool/smtpd:/var/spool/smtpd -v /var/spool/mail:/var/spool/mail vorakl/centos-opensmtpd
@@ -65,10 +65,11 @@ $ docker run -d --name smtpd --net host -v /srv/opensmtpd:/etc/opensmtpd -v /var
 
 ### Download configuration at run-time from a remote resource
 
-[This repository](https://github.com/vorakl/docker-images) has a branch with an example of 'external' configuration. It's called [centos-opensmtpd-conf](https://github.com/vorakl/docker-images/tree/centos-opensmtpd-conf).
-GitHub allows to download a content of the branch as a ZIP archive. The only requirement for using external configuration is to keep all needed files and sub-directories in the `opensmtpd` directory.
+This approach is more suitable for running a service at scale on a cluster with a big number of nodes under control of some orchestration system. In this case, all nodes are used only to run containers and do not have any specific configuration that, by the way, can be changed too often to distribute it in time among the nodes. A better solution is to run a container on a random node and download an actual configuration at run-time from a central configuration storage (like a Git repository, for example).
 
-Let's run the previous example but instead of bind mounted `opensmtpd` from the Host we will provide `opensmtpd` in the external archive:
+[This repository](https://github.com/vorakl/docker-images) has a branch with an example of 'external' configuration. It's called [centos-opensmtpd-conf](https://github.com/vorakl/docker-images/tree/centos-opensmtpd-conf). GitHub allows to download a content of a branch as a ZIP archive. The only requirement in this particular solution for using external configuration is to keep all needed files and sub-directories in the `opensmtpd` directory.
+
+Let's run the previous example but instead of bind mounted `opensmtpd` directory from the Host we will provide it in the external archive:
 
 ```bash
 $ docker run -d --name smtpd --net host -e OPENSMTPD_CONF_URL="https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip" -v /var/spool/smtpd:/var/spool/smtpd -v /var/spool/mail:/var/spool/mail vorakl/centos-opensmtpd
@@ -92,7 +93,11 @@ listen on localhost
 listen on ::0
 
 accept for any relay
+```
 
+To remove the container run
+
+```bash
 $ docker stop smtpd
 $ docker rm smtpd
 
