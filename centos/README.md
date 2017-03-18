@@ -6,16 +6,15 @@
 
 ## Content
 
-The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repo.
-All key components are automatically tested with the same periodicity as well.
-The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of a [docker images collection](https://github.com/vorakl/docker-images) where can be found links to tests and other images
+The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. All key components are automatically tested with the same periodicity as well.
+The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images
 
 In addition, it has everything is needed for...
 
 * installing extra packages ([EPEL](https://fedoraproject.org/wiki/EPEL))
 * controling a life-cycle of processes ([TrivialRC](https://github.com/vorakl/TrivialRC))
 * getting configuration from the environment and creating a final state of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
-* decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/))
+* decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/), unzip)
 
 Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon)
 
@@ -123,6 +122,6 @@ World
 
 More useful examples you can find here:
 
-* [TrivialRC](https://github.com/vorakl/TrivialRC/tree/master/examples)
-* [FakeTpl](https://github.com/vorakl/FakeTpl/tree/master/examples)
+* [TrivialRC examples](https://github.com/vorakl/TrivialRC/tree/master/examples)
+* [FakeTpl examples](https://github.com/vorakl/FakeTpl/tree/master/examples)
 
