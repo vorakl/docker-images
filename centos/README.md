@@ -8,10 +8,10 @@
 
 This image has everything is needed for...
 
-* [EPEL](https://fedoraproject.org/wiki/EPEL) repository
+* installing extra packages ([EPEL](https://fedoraproject.org/wiki/EPEL))
 * controling a life-cycle of processes inside a container and its behaviour ([TrivialRC](https://github.com/vorakl/TrivialRC))
-* getting configuration from the environment and create a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
-* decrypting and extract a downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/))
+* getting configuration from the environment and creating a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
+* decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/))
 
 Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon)
 
@@ -61,9 +61,9 @@ Yoda
 
 ```
 
-### Dockerfile
+### Dockerfiles
 
-* A basic usage in Dockerfile
+* Basic usage in a Dockerfile
 
 ```bash
 FROM vorakl/centos:latest
@@ -115,7 +115,7 @@ World
 
 ```
 
-### The usage of TrivialRC and FakeTpl in containers
+### TrivialRC and FakeTpl in containers
 
 More useful examples you can find here:
 
