@@ -100,5 +100,4 @@ To remove the container run
 ```bash
 $ docker stop smtpd
 $ docker rm smtpd
-
 ```
