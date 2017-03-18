@@ -13,17 +13,16 @@
 
 ## Content
 
-The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. All key components are automatically tested with the same periodicity as well.
-The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images
+The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. That means it's always up to date, including packages which were updated since the release date of the official base image. All key components are automatically tested with the same periodicity. The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images.
 
 In addition, it has everything is needed for...
 
 * installing extra packages ([EPEL](https://fedoraproject.org/wiki/EPEL))
-* controling a life-cycle of processes ([TrivialRC](https://github.com/vorakl/TrivialRC))
+* controlling a life-cycle of processes ([TrivialRC](https://github.com/vorakl/TrivialRC))
 * getting configuration from the environment and creating a final state of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
 * decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/), unzip)
 
-Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon)
+Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon) and is not included in the image.
 
 ## Examples
 
