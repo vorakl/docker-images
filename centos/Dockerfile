@@ -2,7 +2,8 @@ FROM centos:latest
 
 MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name> 
 
-RUN yum install -y epel-release unzip && \
+RUN yum update -y && \
+    yum install -y epel-release unzip && \
     yum clean all
 
 # TrivialRC (RC system, initialization/startup control, process manager)

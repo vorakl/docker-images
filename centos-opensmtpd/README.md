@@ -1,7 +1,7 @@
 # The OpenSMTPD docker image based on CentOS
 
 This image provides only default configuration from the original RPM package.
-It is based on [vorakl/centos](https://github.com/vorakl/docker-images/tree/master/centos) image which extends the original CentOS base image by a few key tools and it's worth reading if you are not familiar with details.
+It is based on [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image which extends the official [CentOS base](https://hub.docker.com/_/centos/) image by a few key tools and it's worth reading if you are not familiar with details.
 Keep in mind that by default it uses these directories in a container:
 
 * `/etc/opensmtpd/` , for keeping configuration files like smtpd.conf

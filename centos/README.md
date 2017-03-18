@@ -2,15 +2,19 @@
 
 ## Tags
 
-* **latest** based on the official [CentOS:latest](https://github.com/CentOS/sig-cloud-instance-images/tree/CentOS-7/docker)
+* **latest** is based on the official [centos:latest](https://hub.docker.com/_/centos/)
 
 ## Content
 
-This image has everything is needed for...
+The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repo.
+All key components are automatically tested with the same periodicity as well.
+The [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image is a part of [docker images repository](https://github.com/vorakl/docker-images) where can be found links to tests and other images
+
+In addition, it has everything is needed for...
 
 * installing extra packages ([EPEL](https://fedoraproject.org/wiki/EPEL))
-* controling a life-cycle of processes inside a container and its behaviour ([TrivialRC](https://github.com/vorakl/TrivialRC))
-* getting configuration from the environment and creating a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
+* controling a life-cycle of processes ([TrivialRC](https://github.com/vorakl/TrivialRC))
+* getting configuration from the environment and creating a final state of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
 * decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/))
 
 Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon)
