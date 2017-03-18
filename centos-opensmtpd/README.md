@@ -1,7 +1,23 @@
 # The OpenSMTPD docker image based on CentOS
 
+* [Content](#content)
+* [Directories structure](#directories-structure)
+* [How to provide configuration?](#how-to-provide-configuration)
+* [Examples](#examples)
+    * [A mail relay for a Host on the localhost interface](#a-mail-relay-for-a-host-on-the-localhost-interface)
+    * [Mount configuration from a host](#mount-configuration-from-a-host)
+    * [Download configuration at run-time from a remote resource](#download-configuration-at-run-time-from-a-remote-resource)
+
+## Content
+
+The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. All key components are automatically tested with the same periodicity as well.
+The [vorakl/centos-opensmtpd](https://hub.docker.com/r/vorakl/centos-opensmtpd/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images
+
 This image provides only default configuration from the original RPM package.
 It is based on [vorakl/centos](https://hub.docker.com/r/vorakl/centos/) image which extends the official [CentOS base](https://hub.docker.com/_/centos/) image by a few key tools and it's worth reading if you are not familiar with details.
+
+## Directories structure
+
 Keep in mind that by default it uses these directories in a container:
 
 * `/etc/opensmtpd/` , for keeping configuration files like smtpd.conf
@@ -74,27 +90,23 @@ Let's run the previous example but instead of bind mounted `opensmtpd` directory
 ```bash
 $ docker run -d --name smtpd --net host -e OPENSMTPD_CONF_URL="https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip" -v /var/spool/smtpd:/var/spool/smtpd -v /var/spool/mail:/var/spool/mail vorakl/centos-opensmtpd
 
-2017-03-17 23:51:28 trc [main/1]: The wait policy: wait_any
-2017-03-17 23:51:28 trc [main/1]: Launching on the boot: /etc/trc.d/boot.get-conf
-2017-03-17 23:51:28 trc [main/1]: The configuration (not encrypted) will be taken from https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip
-Archive:  /tmp/opensmtpd-conf.zip
-5d0762c7be974f1c62d9681e72434196e970507e
-   creating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/
-  inflating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/README.md
-   creating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/opensmtpd/
-  inflating: /tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/opensmtpd/smtpd.conf
-'/tmp/opensmtpd.KtOL5/docker-images-centos-opensmtpd-conf/opensmtpd/smtpd.conf' -> '/etc/opensmtpd/smtpd.conf'
-2017-03-17 23:51:29 trc [async/31]: Launching on the background: /etc/trc.d/async.opensmtpd
+$ docker logs smtpd |& head
+2017-03-18 19:58:40 trc [main/1]: The wait policy: wait_any
+2017-03-18 19:58:40 trc [main/1]: Launching on the boot: /etc/trc.d/boot.get-conf
+2017-03-18 19:58:40 trc [main/1]: The configuration (not encrypted) will be taken from https://github.com/vorakl/docker-images/archive/centos-opensmtpd-conf.zip
+2017-03-18 19:58:42 trc [async/32]: Launching on the background: /etc/trc.d/async.opensmtpd
 info: OpenSMTPD 6.0.2p1 starting
-....
+setup_peer: lookup -> control[40] fd=6
+setup_peer: lookup -> pony express[42] fd=7
+setup_peer: lookup -> queue[43] fd=8
+setup_peer: pony express -> control[40] fd=7
+setup_peer: pony express -> klondike[39] fd=8
 
 $ docker exec -it smtpd cat /etc/opensmtpd/smtpd.conf
-listen on localhost
+listen on 127.0.0.1
 listen on ::0
-
 accept for any relay
 ```
-
 To remove the container run
 
 ```bash

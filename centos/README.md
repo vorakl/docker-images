@@ -1,5 +1,12 @@
 # CentOS base image
 
+* [Tags](#tags)
+* [Content](#content)
+* [Examples](#examples)
+    * [One-Liners](#one-liners)
+    * [Dockerfiles](#dockerfiles)
+    * [TrivialRC and FakeTpl in containers](#trivialrc-and-faketpl-in-containers)
+
 ## Tags
 
 * **latest** is based on the official [centos:latest](https://hub.docker.com/_/centos/)
