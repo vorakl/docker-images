@@ -3,7 +3,8 @@ FROM centos:latest
 MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name> 
 
 RUN yum update -y && \
-    yum install -y epel-release unzip openssl jq && \
+    yum install -y epel-release && \
+    yum install -y unzip jq && \
     yum clean all && \
     rm -rf /var/cache/yum/*
 

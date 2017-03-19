@@ -3,7 +3,7 @@ FROM alpine:latest
 MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name>
 
 RUN apk upgrade --no-cache && \
-    apk add --no-cache bash procps openssl curl jq gnupg1
+    apk add --no-cache bash procps curl jq gnupg1
 
 # TrivialRC (RC system, initialization/startup control, process manager)
 RUN curl -sSLfo /etc/trc http://vorakl.github.io/TrivialRC/trc && \
