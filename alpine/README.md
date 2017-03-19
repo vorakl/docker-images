@@ -21,7 +21,7 @@ In addition, it has everything is needed for...
 * getting configuration from the environment and creating a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
 * decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/), unzip)
 
-Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon) and is not represented in the image.
+Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon) and are not represented in the image.
 
 ## Examples
 
