@@ -1,18 +1,27 @@
 # Alpine base image 
 
+* [Tags](#tags)
+* [Content](#content)
+* [Examples](#examples)
+    * [One-Liners](#one-liners)
+    * [Dockerfiles](#dockerfiles)
+    * [TrivialRC and FakeTpl in containers](#trivialrc-and-faketpl-in-containers)
+
 ## Tags
 
-* **latest** based on the official [Alpine:latest](https://github.com/gliderlabs/docker-alpine/tree/rootfs/library-3.5/versions/library-3.5)
+* **latest** based on the official [alpine:latest](https://hub.docker.com/_/alpine/)
 
 ## Content 
 
-This image has everything is needed for...
+The content (a base layer, packages, etc) of this image is automatically updated *once a day* and on *each commit* to the source repository. That means it's always *up to date*, including packages which were updated since the release date of the official base image. All key components are automatically tested with the same periodicity. The [vorakl/alpine](https://hub.docker.com/r/vorakl/alpine/) image is a part of [the collection of docker images](https://github.com/vorakl/docker-images) where can be found links to tests and other images.
 
-* controling a life-cycle of processes inside a container and its behaviour ([TrivialRC](https://github.com/vorakl/TrivialRC))
-* getting configuration from the environment and create a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
-* decrypting a downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/))
+In addition, it has everything is needed for...
 
-Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon)
+* controling a life-cycle of processes ([TrivialRC](https://github.com/vorakl/TrivialRC))
+* getting configuration from the environment and creating a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
+* decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/), unzip)
+
+Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon) and is not represented in the image.
 
 ## Examples
 
@@ -117,6 +126,6 @@ World
 
 More useful examples you can find here:
 
-* [TrivialRC](https://github.com/vorakl/TrivialRC/tree/master/examples)
-* [FakeTpl](https://github.com/vorakl/FakeTpl/tree/master/examples)
+* [TrivialRC examples](https://github.com/vorakl/TrivialRC/tree/master/examples)
+* [FakeTpl examples](https://github.com/vorakl/FakeTpl/tree/master/examples)
 
