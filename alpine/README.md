@@ -19,7 +19,8 @@ In addition, it has everything is needed for...
 
 * controling a life-cycle of processes ([TrivialRC](https://github.com/vorakl/TrivialRC))
 * getting configuration from the environment and creating a final view of configuration using a template engine ([FakeTpl](https://github.com/vorakl/FakeTpl))
-* decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource ([GnuPG](https://www.gnupg.org/), unzip)
+* downloading files and data manipulation (curl, jq)
+* decrypting and extracting downloaded configuration if it has sensitive data and resides on a public resource (gnupg, unzip, tar)
 
 Such aspects as monitoring, alerting, logging, usually, are done on higher levels (like OS and docker daemon) and are not represented in the image.
 
