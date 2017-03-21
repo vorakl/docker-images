@@ -43,11 +43,11 @@ test:	test-alpine test-centos test-centos-opensmtpd
 
 test-alpine:
 	@${ECHO_BIN} ">>> Testing vorakl/alpine ..."
-	@${DOCKER_BIN} run --rm -e RC_WAIT_POLICY=wait_all vorakl/alpine -B 'source faketpl' -F 'source /etc/os-release && faketpl <<< "-=[\$${PRETTY_NAME}]=-"' -F 'gpg --version | grep ^gpg' -F 'curl --version | grep ^curl' -F 'faketpl <<< "-=[\$$(uname -r)]=-"'
+	@${DOCKER_BIN} run --rm -e RC_WAIT_POLICY=wait_err vorakl/alpine -B 'source faketpl' -F 'source /etc/os-release && faketpl <<< "-=[\$${PRETTY_NAME}]=-"' -F 'bash -c "echo bash \$${BASH_VERSION}"' -F 'gpg --version | grep ^gpg' -F 'curl --version | grep ^curl' -F 'jq --version' -F 'faketpl <<< "-=[\$$(uname -r)]=-"'
 
 test-centos:
 	@${ECHO_BIN} ">>> Testing vorakl/centos ..."
-	@${DOCKER_BIN} run --rm -e RC_WAIT_POLICY=wait_all vorakl/centos -B 'source faketpl' -F 'faketpl <<< "-=[\$$(cat /etc/centos-release)]=-"' -F 'gpg --version | grep ^gpg' -F 'curl --version | grep ^curl' -F 'faketpl <<< "-=[\$$(uname -r)]=-"'
+	@${DOCKER_BIN} run --rm -e RC_WAIT_POLICY=wait_err vorakl/centos -B 'source faketpl' -F 'faketpl <<< "-=[\$$(cat /etc/centos-release)]=-"' -F 'bash -c "echo bash \$${BASH_VERSION}"' -F 'gpg --version | grep ^gpg' -F 'curl --version | grep ^curl' -F 'jq --version' -F 'faketpl <<< "-=[\$$(uname -r)]=-"'
 
 test-centos-opensmtpd:
 	@${ECHO_BIN} ">>> Testing vorakl/centos-opensmtpd ..."
