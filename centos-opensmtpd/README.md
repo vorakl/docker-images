@@ -2,7 +2,7 @@
 
 * [Content](#content)
 * [Directories structure](#directories-structure)
-* [How to provide configuration?](#how-to-provide-configuration)
+* [How to supply configuration?](#how-to-provide-configuration)
 * [Examples](#examples)
     * [A mail relay for a Host on the localhost interface](#a-mail-relay-for-a-host-on-the-localhost-interface)
     * [Mount configuration from a host](#mount-configuration-from-a-host)
@@ -26,7 +26,7 @@ Keep in mind that by default it uses these directories in a container:
 
 So, if a daemon is going to be used for storing messages (it's not a case for pure forwarders), you need to bind mount `/var/spool/mail/` somewhere on a host to prevent growing of container's space. More over, during a delivery process, a mail relay stores messages in a queue that means on heavy loaded relays you'll need to bind mount `/var/spool/smtpd/` on a host as well. In addition, it doesn't make a lot of sense to run a relay with the default configuration except occasions when you need to send mails from the localhost (`--net host`) or just test the docker image itself. But in most cases, you'll need to provide the real configuration at run-time.
 
-## How to provide configuration?
+## How to supply configuration?
 
 and there are a few options:
 
