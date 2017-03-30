@@ -21,6 +21,20 @@ usage:
 	@${ECHO_BIN} "  test     Run tests for docker images"
 	@${ECHO_BIN} ""
 
+trigger: trigger-base
+
+trigger-base: trigger-alpine trigger-centos
+
+trigger-alpine:
+	@${ECHO_BIN} -n ">>> Triggering build and push of vorakl/alpine ... "
+	@curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/vorakl/alpine/trigger/24d5ca99-fe04-4274-b8f0-18fd86e58b7f/
+	@${ECHO_BIN} ""
+
+trigger-centos:
+	@${ECHO_BIN} -n ">>> Triggering build and push of vorakl/centos ... "
+	@curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/vorakl/centos/trigger/47dad8a3-d5d1-4664-b437-92d94c2a8767/
+	@${ECHO_BIN} ""
+
 build:  build-base build-service
 
 build-base: build-alpine build-centos
