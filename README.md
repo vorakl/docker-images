@@ -13,7 +13,7 @@ For testing services in containers is being used [this technic](https://github.c
 
 ## Available images
 
-Any of these images can downloaded by specifying a name[:tag]. <br />
+Any of these images can be downloaded by specifying a name[:tag]. <br />
 For example `docker pull vorakl/centos:latest` or `docker pull vorakl/alpine`
 
 * Base images
