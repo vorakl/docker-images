@@ -2,7 +2,7 @@
 
 # Docker images
 
-A collection of docker images.
+A collection of useful docker images.
 
 For all images, *once a day* and on *each commit* to this source repository, automatically are being run:
 
