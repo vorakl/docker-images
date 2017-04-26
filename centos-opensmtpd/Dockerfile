@@ -1,4 +1,4 @@
-FROM vorakl/centos
+FROM vorakl/centos:latest
 
 MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name>
 
