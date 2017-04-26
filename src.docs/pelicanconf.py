@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 ########################
 
 AUTHOR = u'Oleksii Tsvietnov'
-SITENAME = u"Docker-Images"
+SITENAME = u"Docker Images"
 SITEURL = 'http://docker-images.vorakl.name'
 SITEDESC = u'A collection of useful docker images'
 SITE_VERSION = '1493247896'
