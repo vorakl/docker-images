@@ -51,7 +51,7 @@ DISPLAY_SITE_ON_SIDEBAR = False
 DISPLAY_LINKS_ON_SIDEBAR = False # Links are set in the LINKS variable below
 
 MENUITEMS = [
-    ("hub", "https://hub.docker.com/u/vorakl/"),
+    ("docker", "https://hub.docker.com/u/vorakl/"),
     ("repo", "https://github.com/vorakl/docker-images"),
     ("blog", "http://vorakl.name/"),
     ("author", "http://vorakl.name/pages/about/"),
