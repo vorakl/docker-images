@@ -29,13 +29,23 @@ trigger: trigger-base
 trigger-base: trigger-alpine trigger-centos
 
 trigger-alpine:
+	@${ECHO_BIN} ""
 	@${ECHO_BIN} -n ">>> Triggering build and push of vorakl/alpine ... "
-	@curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/vorakl/alpine/trigger/24d5ca99-fe04-4274-b8f0-18fd86e58b7f/
+	@curl \
+	    -H "Content-Type: application/json" \
+	    --data '{"build": true}' \
+	    -X POST \
+	    https://registry.hub.docker.com/u/vorakl/alpine/trigger/24d5ca99-fe04-4274-b8f0-18fd86e58b7f/
 	@${ECHO_BIN} ""
 
 trigger-centos:
+	@${ECHO_BIN} ""
 	@${ECHO_BIN} -n ">>> Triggering build and push of vorakl/centos ... "
-	@curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/vorakl/centos/trigger/47dad8a3-d5d1-4664-b437-92d94c2a8767/
+	@curl \
+	    -H "Content-Type: application/json" \
+	    --data '{"build": true}' \
+	    -X POST \
+	    https://registry.hub.docker.com/u/vorakl/centos/trigger/47dad8a3-d5d1-4664-b437-92d94c2a8767/
 	@${ECHO_BIN} ""
 
 ## Build docker images
@@ -47,27 +57,36 @@ build-base: build-alpine build-centos
 build-service: build-centos-opensmtpd build-alpine-pelican
 
 build-alpine:
+	@${ECHO_BIN} ""
 	@${ECHO_BIN} ">>> Building vorakl/alpine ..."
 	@${DOCKER_BIN} build --no-cache -t vorakl/alpine alpine
+	@${ECHO_BIN} ""
 
 build-centos:
+	@${ECHO_BIN} ""
 	@${ECHO_BIN} ">>> Building vorakl/centos ..."
 	@${DOCKER_BIN} build --no-cache -t vorakl/centos centos
+	@${ECHO_BIN} ""
 
 build-centos-opensmtpd:
+	@${ECHO_BIN} ""
 	@${ECHO_BIN} ">>> Building vorakl/centos-opensmtpd ..."
 	@${DOCKER_BIN} build --no-cache -t vorakl/centos-opensmtpd centos-opensmtpd
+	@${ECHO_BIN} ""
 
 build-alpine-pelican:
+	@${ECHO_BIN} ""
 	@${ECHO_BIN} ">>> Building vorakl/alpine-pelican ..."
 	@${DOCKER_BIN} build --no-cache -t vorakl/alpine-pelican alpine-pelican
+	@${ECHO_BIN} ""
 
 ## Test docker images
 
 test:	test-alpine test-centos test-centos-opensmtpd test-alpine-pelican
 
 test-alpine:
-	@${ECHO_BIN} -e "\n>>> Testing vorakl/alpine ..."
+	@${ECHO_BIN} ""
+	@${ECHO_BIN} ">>> Testing vorakl/alpine ..."
 	@${DOCKER_BIN} run \
 	    --rm \
 	    --env RC_WAIT_POLICY=wait_err \
@@ -79,9 +98,11 @@ test-alpine:
 		-F 'curl --version | grep ^curl' \
 		-F 'jq --version' \
 		-F 'faketpl <<< "-=[\$$(uname -r)]=-"'
+	@${ECHO_BIN} ""
 
 test-centos:
-	@${ECHO_BIN} -e "\n>>> Testing vorakl/centos ..."
+	@${ECHO_BIN} ""
+	@${ECHO_BIN} ">>> Testing vorakl/centos ..."
 	@${DOCKER_BIN} run \
 	    --rm \
 	    --env RC_WAIT_POLICY=wait_err \
@@ -93,19 +114,28 @@ test-centos:
 		-F 'curl --version | grep ^curl' \
 		-F 'jq --version' \
 		-F 'faketpl <<< "-=[\$$(uname -r)]=-"'
+	@${ECHO_BIN} ""
 
 test-centos-opensmtpd:
-	@${ECHO_BIN} -e "\n>>> Testing vorakl/centos-opensmtpd ..."
+	@${ECHO_BIN} ""
+	@${ECHO_BIN} ">>> Testing vorakl/centos-opensmtpd ..."
 	@${DOCKER_BIN} run \
 	    --rm \
 	    --env RC_VERBOSE=false \
 	    --env RC_WAIT_POLICY=wait_any \
 	    vorakl/centos-opensmtpd \
-		-H 'if [[ $${_exit_status} -eq 138 ]]; then exit 0; else exit $${_exit_status}; fi' \
+		-H 'if [[ $${_exit_status} -eq 138 ]]; \
+		    then \
+		    	exit 0; \
+		    else \
+		    	exit $${_exit_status}; \
+		    fi' \
 		-D 'sleep 3; smtpctl show status && kill -10 $${MAINPID}'
+	@${ECHO_BIN} ""
 
 test-alpine-pelican:
-	@${ECHO_BIN} -e "\n>>> Testing vorakl/alpine-pelican ..."
+	@${ECHO_BIN} ""
+	@${ECHO_BIN} ">>> Testing vorakl/alpine-pelican ..."
 	@${DOCKER_BIN} run \
 	    --rm \
 	    --user $$(id -u):$$(id -g) \
@@ -120,4 +150,5 @@ test-alpine-pelican:
 		    rm -rf /site/output/*; \
 		    exit $${_exit_status}' \
 		-F 'pelican /site/input -o /site/output -s /site/pelicanconf.py'
+	@${ECHO_BIN} ""
 
