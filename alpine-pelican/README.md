@@ -47,4 +47,4 @@ docker run \
 
 You can take a look on how I'm using this docker image to build static sites in the [Makefile](https://github.com/vorakl/aves/blob/master/Makefile) (the `html` target) which comes with [Aves](https://github.com/vorakl/aves) theme.
 
-Another example is, the test of this image that can be found in the [Makefile](https://github.com/vorakl/docker-images/blob/master/Makefile) (the `test-alpine-pelican` target).
+Another example is the test of this image that can be found in the [Makefile](https://github.com/vorakl/docker-images/blob/master/Makefile) (the `test-alpine-pelican` target).
