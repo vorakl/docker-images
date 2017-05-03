@@ -29,16 +29,16 @@ To get started you just need to have
 * plugins (optional)
 
 Then, you'll need to mount all needed directories to the container and run Pelican with appropriate paramaters.
-Let's say, I'm gonna test this solution in `/home/me/site/`. I've cloned the repo with [themes](https://github.com/getpelican/pelican-themes) to `/home/me/site/pelican-themes/` and I'm gonna use the `bootstrap` theme. The content of my future site is located in `/home/me/site/content/` and I'd like to have a rendered site in `/home/me/site/output/`. The last thing to mention is that the config file is `/home/me/site/pelicanconf.py`. In this case, the command I have to run will look like:
+Let's say, I'm gonna test this solution in `/home/user/site/`. I've cloned the repo with [themes](https://github.com/getpelican/pelican-themes) to `/home/user/site/pelican-themes/` and I'm gonna use the `bootstrap` theme. The content of my future site is located in `/home/user/site/content/` and I'd like to have a rendered site in `/home/user/site/output/`. The last thing to mention is that the config file is `/home/user/site/pelicanconf.py`. In this case, the command I have to run will look like:
 
 ```bash
 docker run \
     --rm \
     --user $(UID):$(GID) \
-    --volume /home/me/site:/site \
-    --volume /home/me/site/content:/input \
-    --volume /home/me/site/output:/output \
-    --volume /home/me/site/pelican-themes/bootstrap:/theme \
+    --volume /home/user/site:/site \
+    --volume /home/user/site/content:/input \
+    --volume /home/user/site/output:/output \
+    --volume /home/user/site/pelican-themes/bootstrap:/theme \
     vorakl/alpine-pelican \
         pelican /input -o /output -t /theme -s /site/pelicanconf.py
 ```
