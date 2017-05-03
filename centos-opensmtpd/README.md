@@ -1,5 +1,6 @@
 # The OpenSMTPD docker image based on CentOS
 
+* [Tags](#tags)
 * [Content](#content)
 * [Directories structure](#directories-structure)
 * [How to supply configuration?](#how-to-provide-configuration)
@@ -7,6 +8,10 @@
     * [A mail relay for a Host on the localhost interface](#a-mail-relay-for-a-host-on-the-localhost-interface)
     * [Mount configuration from a host](#mount-configuration-from-a-host)
     * [Download configuration at run-time from a remote resource](#download-configuration-at-run-time-from-a-remote-resource)
+
+## Tags
+
+* **latest** is based on Vorakl's CentOS base image [vorakl/centos:latest](https://hub.docker.com/r/vorakl/centos/)
 
 ## Content
 
