@@ -94,6 +94,7 @@ test-alpine:
 	    	-B 'source faketpl' \
 		-F 'source /etc/os-release && faketpl <<< "-=[\$${PRETTY_NAME}]=-"' \
 		-F 'bash -c "echo bash \$${BASH_VERSION}"' \
+		-F '/etc/trc --version' \
 		-F 'gpg --version | grep ^gpg' \
 		-F 'curl --version | grep ^curl' \
 		-F 'jq --version' \
@@ -110,6 +111,7 @@ test-centos:
 	    	-B 'source faketpl' \
 		-F 'faketpl <<< "-=[\$$(cat /etc/centos-release)]=-"' \
 		-F 'bash -c "echo bash \$${BASH_VERSION}"' \
+		-F '/etc/trc --version' \
 		-F 'gpg --version | grep ^gpg' \
 		-F 'curl --version | grep ^curl' \
 		-F 'jq --version' \
