@@ -1,5 +1,7 @@
 * text=auto
 
+alipne/* linguist-language=Dockerfile
+centos/* linguist-language=Dockerfile
 docs/* linguist-documentation
 src.docs/* linguist-documentation
 Makefile linguist-detectable=false
