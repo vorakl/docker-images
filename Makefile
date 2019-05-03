@@ -32,20 +32,16 @@ trigger-alpine:
 	@${ECHO_BIN} ""
 	@${ECHO_BIN} -n ">>> Triggering build and push of vorakl/alpine ... "
 	@curl \
-	    -H "Content-Type: application/json" \
-	    --data '{"build": true}' \
 	    -X POST \
-	    https://registry.hub.docker.com/u/vorakl/alpine/trigger/24d5ca99-fe04-4274-b8f0-18fd86e58b7f/
+	    https://cloud.docker.com/api/build/v1/source/e13e5a87-c9cd-46ea-9669-53371dd3f6c0/trigger/24d5ca99-fe04-4274-b8f0-18fd86e58b7f/call/
 	@${ECHO_BIN} ""
 
 trigger-centos:
 	@${ECHO_BIN} ""
 	@${ECHO_BIN} -n ">>> Triggering build and push of vorakl/centos ... "
 	@curl \
-	    -H "Content-Type: application/json" \
-	    --data '{"build": true}' \
 	    -X POST \
-	    https://registry.hub.docker.com/u/vorakl/centos/trigger/47dad8a3-d5d1-4664-b437-92d94c2a8767/
+	    https://cloud.docker.com/api/build/v1/source/a5fde284-a09f-4b6f-b267-f0ccf7e31ea1/trigger/47dad8a3-d5d1-4664-b437-92d94c2a8767/call/
 	@${ECHO_BIN} ""
 
 ## Build docker images
