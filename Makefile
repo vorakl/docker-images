@@ -1,4 +1,4 @@
-# (c) 2017 Oleksii Tsvietnov, me@vorakl.name, All rights reserved
+# (c) 2017 Oleksii Tsvietnov, vorakl@protonmail.com, All rights reserved
 #
 ## Variables:
 ECHO_BIN ?= echo

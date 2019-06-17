@@ -1,6 +1,6 @@
 FROM centos:latest
 
-MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name> 
+MAINTAINER "Oleksii Tsvietnov" <vorakl@protonmail.com>
 
 RUN yum update -y && \
     yum install -y epel-release && \

@@ -1,6 +1,6 @@
 FROM vorakl/alpine:latest
 
-MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name>
+MAINTAINER "Oleksii Tsvietnov" <vorakl@protonmail.com>
 
 RUN apk add --no-cache python3
 RUN pip3 install --upgrade pip && \

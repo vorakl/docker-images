@@ -1,6 +1,6 @@
 FROM vorakl/centos:latest
 
-MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name>
+MAINTAINER "Oleksii Tsvietnov" <vorakl@protonmail.com>
 
 ENV RC_VERBOSE true
 

@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER "Oleksii Tsvietnov" <me@vorakl.name>
+MAINTAINER "Oleksii Tsvietnov" <vorakl@protonmail.com>
 
 RUN apk upgrade --no-cache && \
     apk add --no-cache bash procps curl jq gnupg
