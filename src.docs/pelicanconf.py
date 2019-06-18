@@ -9,7 +9,7 @@ AUTHOR = u'Oleksii Tsvietnov'
 SITENAME = u"Docker Images"
 SITEURL = 'http://docker-images.vorakl.name'
 SITEDESC = u'A collection of useful docker images'
-SITE_VERSION = '1494021623'
+SITE_VERSION = '1494021624'
 SITE_KEYWORDS = 'docker images,docker,images'
 ARTICLE_PATHS = ['articles'] # a place for articles under the content location
 PAGE_PATHS = ['pages']
@@ -37,7 +37,7 @@ OUTPUT_RETENTION = ["CNAME"] # but these dirs and files should be kept
 ############################
 
 DISPLAY_MENU = True
-DISPLAY_PAGES_ON_MENU = False
+DISPLAY_PAGES_IN_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_ITEMS_ON_MENU = True # Items are set in the MENUITEMS variable below
 
