@@ -6,10 +6,6 @@
     <changefreq>daily</changefreq>
 </url>
 <url>
-    <loc>http://docker-images.vorakl.name/pages/</loc>
-    <priority>1</priority>
-    <changefreq>daily</changefreq>
-</url><url>
     <loc>http://docker-images.vorakl.name/pages/info/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
